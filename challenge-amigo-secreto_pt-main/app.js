@@ -24,5 +24,17 @@ function atualizarLista() {
 }
 
 function limparCampo() {
-    document.querySelector('#amigo').valor = '';
+    document.querySelector('#amigo').value = '';
+}
+
+function sortearAmigo() {
+    if (amigos.length === 0) {
+        alert('Não há nomes para sortear. Por favor, adicione um nome.');
+        return;
+    }
+    let indiceAleatorio = Math.floor(Math.random() * amigos.length);
+    let amigoSorteado = amigos[indiceAleatorio];
+
+    let resultado = document.getElementById('resultado');
+    resultado.innerHTML = `<li>${amigoSorteado}</li>`;
 }
